@@ -39,23 +39,45 @@
         <!--Game View Controller-->
         <scene sceneID="HCV-uZ-LHP">
             <objects>
-                <viewController id="9Ys-1r-IbX" customClass="GameViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Ys-1r-IbX" customClass="GameViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="72b-XY-yec">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="nfb-mB-X7v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="347-SR-GyI"/>
+                    <navigationItem key="navigationItem" id="347-SR-GyI">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" image="slider.horizontal.3" catalog="system" id="EgV-Mx-4ee">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Search" image="magnifyingglass" catalog="system" id="x8j-MZ-frb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="searchTapped:" destination="9Ys-1r-IbX" id="kwn-h1-zYH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="3wn-Jh-lWX" id="hoB-7L-w5b"/>
+                        <outlet property="searchBarButton" destination="x8j-MZ-frb" id="dw6-Nd-Vie"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hk-6q-Vav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" id="3wn-Jh-lWX">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="9Ys-1r-IbX" id="oVi-pW-XbT"/>
+                    </connections>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="-912" y="985"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="elh-ab-UHQ">
             <objects>
-                <viewController storyboardIdentifier="NotesViewController" id="8vY-FE-Q8w" customClass="NotesViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NotesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8vY-FE-Q8w" customClass="NotesViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A1z-Uy-4vt">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,7 +102,7 @@
         <!--Favourites View Controller-->
         <scene sceneID="ekm-HZ-ghY">
             <objects>
-                <viewController storyboardIdentifier="FavouritesViewController" id="ody-re-Db3" customClass="FavouritesViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavouritesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ody-re-Db3" customClass="FavouritesViewController" customModule="game_guide_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OGa-ag-SBh">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,7 +178,9 @@
     <resources>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
+        <image name="slider.horizontal.3" catalog="system" width="128" height="99"/>
         <namedColor name="AccentColor">
             <color red="0.019999999552965164" green="0.043000001460313797" blue="0.093999996781349182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

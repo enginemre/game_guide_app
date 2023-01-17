@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69087164297729F600339488 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69087163297729F600339488 /* BaseViewController.swift */; };
+		6908716629773F3700339488 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908716529773F3700339488 /* ExpandableView.swift */; };
 		693BAEC2297146140011D412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC1297146140011D412 /* AppDelegate.swift */; };
 		693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC3297146140011D412 /* SceneDelegate.swift */; };
 		693BAEC6297146140011D412 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC5297146140011D412 /* TabBarController.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		69087163297729F600339488 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6908716529773F3700339488 /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		693BAEBE297146140011D412 /* game_guide_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game_guide_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693BAEC1297146140011D412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693BAEC3297146140011D412 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				69087163297729F600339488 /* BaseViewController.swift */,
+				6908716529773F3700339488 /* ExpandableView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				693BAEF629717EE10011D412 /* GameViewController.swift in Sources */,
 				693BAEC6297146140011D412 /* TabBarController.swift in Sources */,
 				693BAEFA297180180011D412 /* NotesViewController.swift in Sources */,
+				6908716629773F3700339488 /* ExpandableView.swift in Sources */,
 				693BAEC2297146140011D412 /* AppDelegate.swift in Sources */,
 				69087164297729F600339488 /* BaseViewController.swift in Sources */,
 				693BAECC297146140011D412 /* game_guide_app.xcdatamodeld in Sources */,
