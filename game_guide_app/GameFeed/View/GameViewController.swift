@@ -7,16 +7,13 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .cyan
     
     }
-    
-
     
 
 }

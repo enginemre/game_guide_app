@@ -14,7 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Customizing UI Navigation bar
+        UINavigationBar.appearance().backgroundColor = UIColor(named: "AccentColor")
+        let attributes = [
+            NSAttributedString.Key.font: UIFont(name: "Sk-Modernist-Bold", size: 18)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attributes
+        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "arrow-back")
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "arrow-back")
+        
         return true
     }
 

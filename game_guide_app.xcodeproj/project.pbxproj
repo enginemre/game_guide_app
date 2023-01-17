@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69087164297729F600339488 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69087163297729F600339488 /* BaseViewController.swift */; };
 		693BAEC2297146140011D412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC1297146140011D412 /* AppDelegate.swift */; };
 		693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC3297146140011D412 /* SceneDelegate.swift */; };
 		693BAEC6297146140011D412 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC5297146140011D412 /* TabBarController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		69087163297729F600339488 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		693BAEBE297146140011D412 /* game_guide_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game_guide_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693BAEC1297146140011D412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693BAEC3297146140011D412 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690871602977271E00339488 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				69087163297729F600339488 /* BaseViewController.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
 		690E964B2972767A00A664E2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		693BAEDF2971722E0011D412 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				690871602977271E00339488 /* components */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -311,6 +322,7 @@
 				693BAEC6297146140011D412 /* TabBarController.swift in Sources */,
 				693BAEFA297180180011D412 /* NotesViewController.swift in Sources */,
 				693BAEC2297146140011D412 /* AppDelegate.swift in Sources */,
+				69087164297729F600339488 /* BaseViewController.swift in Sources */,
 				693BAECC297146140011D412 /* game_guide_app.xcdatamodeld in Sources */,
 				693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */,
 			);
