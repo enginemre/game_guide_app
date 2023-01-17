@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		690E964F2972768C00A664E2 /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 690E964C2972768C00A664E2 /* Sk-Modernist-Bold.otf */; };
-		690E96502972768C00A664E2 /* Sk-Modernist-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 690E964D2972768C00A664E2 /* Sk-Modernist-Mono.otf */; };
-		690E96512972768C00A664E2 /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 690E964E2972768C00A664E2 /* Sk-Modernist-Regular.otf */; };
 		693BAEC2297146140011D412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC1297146140011D412 /* AppDelegate.swift */; };
 		693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC3297146140011D412 /* SceneDelegate.swift */; };
 		693BAEC6297146140011D412 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC5297146140011D412 /* TabBarController.swift */; };
@@ -20,12 +17,12 @@
 		693BAEF629717EE10011D412 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEF529717EE10011D412 /* GameViewController.swift */; };
 		693BAEF829717F270011D412 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEF729717F270011D412 /* FavouritesViewController.swift */; };
 		693BAEFA297180180011D412 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEF9297180180011D412 /* NotesViewController.swift */; };
+		6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */; };
+		6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */; };
+		694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		690E964C2972768C00A664E2 /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Bold.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
-		690E964D2972768C00A664E2 /* Sk-Modernist-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Mono.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Mono.otf"; sourceTree = "<group>"; };
-		690E964E2972768C00A664E2 /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Regular.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Regular.otf"; sourceTree = "<group>"; };
 		693BAEBE297146140011D412 /* game_guide_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game_guide_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693BAEC1297146140011D412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693BAEC3297146140011D412 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +35,9 @@
 		693BAEF529717EE10011D412 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		693BAEF729717F270011D412 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		693BAEF9297180180011D412 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Regular.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Regular.otf"; sourceTree = "<group>"; };
+		6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Bold.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
+		6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Mono.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Mono.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +54,9 @@
 		690E964B2972767A00A664E2 /* fonts */ = {
 			isa = PBXGroup;
 			children = (
-				690E964C2972768C00A664E2 /* Sk-Modernist-Bold.otf */,
-				690E964D2972768C00A664E2 /* Sk-Modernist-Mono.otf */,
-				690E964E2972768C00A664E2 /* Sk-Modernist-Regular.otf */,
+				6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */,
+				6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */,
+				6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */,
 			);
 			path = fonts;
 			sourceTree = "<group>";
@@ -290,11 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				690E96512972768C00A664E2 /* Sk-Modernist-Regular.otf in Resources */,
 				693BAED1297146150011D412 /* LaunchScreen.storyboard in Resources */,
 				693BAECE297146150011D412 /* Assets.xcassets in Resources */,
-				690E964F2972768C00A664E2 /* Sk-Modernist-Bold.otf in Resources */,
-				690E96502972768C00A664E2 /* Sk-Modernist-Mono.otf in Resources */,
+				694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */,
+				6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */,
+				6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */,
 				693BAEC9297146140011D412 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
