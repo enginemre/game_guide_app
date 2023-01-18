@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sk-Modernist-Regular.otf">
+            <string>Sk-Modernist-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameFeedCell" customModule="game_guide_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="286" height="249"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="249"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WlW-tp-8pY">
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="249"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Benim Oynum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZy-yG-3bU">
+                                <rect key="frame" x="23" y="183" width="239" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="58" id="HXT-Vn-vkW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Sk-Modernist-Regular" family="Sk-Modernist" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="server.rack" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aue-gJ-wWL">
+                                <rect key="frame" x="0.0" y="1.6666666666666572" width="286" height="157"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Aue-gJ-wWL" firstAttribute="top" secondItem="WlW-tp-8pY" secondAttribute="top" id="CpR-VG-bdw"/>
+                            <constraint firstItem="XZy-yG-3bU" firstAttribute="bottom" secondItem="WlW-tp-8pY" secondAttribute="bottomMargin" id="GOK-pN-58C"/>
+                            <constraint firstItem="Aue-gJ-wWL" firstAttribute="leading" secondItem="WlW-tp-8pY" secondAttribute="leading" id="PPP-GE-DQn"/>
+                            <constraint firstAttribute="trailing" secondItem="Aue-gJ-wWL" secondAttribute="trailing" id="Uyh-5l-n9V"/>
+                            <constraint firstItem="Aue-gJ-wWL" firstAttribute="centerX" secondItem="XZy-yG-3bU" secondAttribute="centerX" id="aE1-TK-ghP"/>
+                            <constraint firstItem="XZy-yG-3bU" firstAttribute="top" secondItem="Aue-gJ-wWL" secondAttribute="bottom" constant="23" id="iW1-mh-eJZ"/>
+                            <constraint firstItem="XZy-yG-3bU" firstAttribute="leading" secondItem="WlW-tp-8pY" secondAttribute="leading" constant="23" id="mSK-ac-jND"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="WlW-tp-8pY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1RA-1A-l5V"/>
+                <constraint firstAttribute="bottom" secondItem="WlW-tp-8pY" secondAttribute="bottom" id="F8d-DC-GBg"/>
+                <constraint firstItem="WlW-tp-8pY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="FkQ-Ni-XjV"/>
+                <constraint firstAttribute="trailing" secondItem="WlW-tp-8pY" secondAttribute="trailing" id="Kat-wn-MT6"/>
+            </constraints>
+            <size key="customSize" width="370" height="318"/>
+            <connections>
+                <outlet property="gameTitle" destination="XZy-yG-3bU" id="h2l-5s-O7a"/>
+                <outlet property="gameView" destination="WlW-tp-8pY" id="jfg-ra-NIv"/>
+            </connections>
+            <point key="canvasLocation" x="386.15384615384613" y="104.85781990521326"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="server.rack" catalog="system" width="128" height="93"/>
+    </resources>
+</document>

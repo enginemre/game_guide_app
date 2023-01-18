@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		69087164297729F600339488 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69087163297729F600339488 /* BaseViewController.swift */; };
-		6908716629773F3700339488 /* ExpandableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6908716529773F3700339488 /* ExpandableView.swift */; };
 		693BAEC2297146140011D412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC1297146140011D412 /* AppDelegate.swift */; };
 		693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC3297146140011D412 /* SceneDelegate.swift */; };
 		693BAEC6297146140011D412 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC5297146140011D412 /* TabBarController.swift */; };
@@ -22,11 +21,15 @@
 		6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */; };
 		6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */; };
 		694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */; };
+		69BF933629780109008A14A1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF933529780109008A14A1 /* GameViewModel.swift */; };
+		69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF933C297821AB008A14A1 /* GameFeedCell.swift */; };
+		69BF933F297821AB008A14A1 /* GameFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BF933D297821AB008A14A1 /* GameFeedCell.xib */; };
+		69F5A820297845E500361D31 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F5A81F297845E500361D31 /* NetworkHelper.swift */; };
+		69F5A822297845F500361D31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F5A821297845F500361D31 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		69087163297729F600339488 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		6908716529773F3700339488 /* ExpandableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableView.swift; sourceTree = "<group>"; };
 		693BAEBE297146140011D412 /* game_guide_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game_guide_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693BAEC1297146140011D412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		693BAEC3297146140011D412 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,11 @@
 		6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Regular.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Regular.otf"; sourceTree = "<group>"; };
 		6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Bold.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
 		6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Mono.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Mono.otf"; sourceTree = "<group>"; };
+		69BF933529780109008A14A1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		69BF933C297821AB008A14A1 /* GameFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedCell.swift; sourceTree = "<group>"; };
+		69BF933D297821AB008A14A1 /* GameFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFeedCell.xib; sourceTree = "<group>"; };
+		69F5A81F297845E500361D31 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		69F5A821297845F500361D31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				69087163297729F600339488 /* BaseViewController.swift */,
-				6908716529773F3700339488 /* ExpandableView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -113,6 +120,7 @@
 		693BAED929715D570011D412 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				69F5A81E297845D000361D31 /* NetworkLayer */,
 				693BAEF429717A170011D412 /* Model */,
 				693BAEF329717A080011D412 /* ViewModel */,
 				693BAEF229717A020011D412 /* View */,
@@ -124,6 +132,7 @@
 		693BAEDA29715D6C0011D412 /* GameFeed */ = {
 			isa = PBXGroup;
 			children = (
+				69BF93372978071B008A14A1 /* Components */,
 				693BAEE9297179940011D412 /* Model */,
 				693BAEE82971798F0011D412 /* ViewModel */,
 				693BAEE7297179890011D412 /* View */,
@@ -192,6 +201,7 @@
 		693BAEE82971798F0011D412 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				69BF933529780109008A14A1 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -244,6 +254,24 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		69BF93372978071B008A14A1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				69BF933C297821AB008A14A1 /* GameFeedCell.swift */,
+				69BF933D297821AB008A14A1 /* GameFeedCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		69F5A81E297845D000361D31 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				69F5A81F297845E500361D31 /* NetworkHelper.swift */,
+				69F5A821297845F500361D31 /* NetworkManager.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +334,7 @@
 			files = (
 				693BAED1297146150011D412 /* LaunchScreen.storyboard in Resources */,
 				693BAECE297146150011D412 /* Assets.xcassets in Resources */,
+				69BF933F297821AB008A14A1 /* GameFeedCell.xib in Resources */,
 				694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */,
 				6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */,
 				6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */,
@@ -320,15 +349,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F5A820297845E500361D31 /* NetworkHelper.swift in Sources */,
 				693BAEF829717F270011D412 /* FavouritesViewController.swift in Sources */,
 				693BAEF629717EE10011D412 /* GameViewController.swift in Sources */,
 				693BAEC6297146140011D412 /* TabBarController.swift in Sources */,
 				693BAEFA297180180011D412 /* NotesViewController.swift in Sources */,
-				6908716629773F3700339488 /* ExpandableView.swift in Sources */,
 				693BAEC2297146140011D412 /* AppDelegate.swift in Sources */,
 				69087164297729F600339488 /* BaseViewController.swift in Sources */,
 				693BAECC297146140011D412 /* game_guide_app.xcdatamodeld in Sources */,
+				69BF933629780109008A14A1 /* GameViewModel.swift in Sources */,
+				69F5A822297845F500361D31 /* NetworkManager.swift in Sources */,
 				693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */,
+				69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

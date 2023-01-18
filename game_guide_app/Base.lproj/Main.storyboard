@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,8 +44,47 @@
                     <view key="view" contentMode="scaleToFill" id="72b-XY-yec">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Vzf-0q-Qf4">
+                                <rect key="frame" x="145" y="330.66666666666669" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="W2V-on-yK8"/>
+                                    <constraint firstAttribute="width" constant="100" id="vcn-4I-vRW"/>
+                                </constraints>
+                                <color key="color" red="0.2807419042" green="1" blue="0.031758722339999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WTa-2L-gq9">
+                                <rect key="frame" x="4" y="91" width="382" height="670"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v99-T3-DK7">
+                                    <size key="itemSize" width="326" height="250"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="0rE-va-12G">
+                                        <rect key="frame" x="28" y="10" width="326" height="250"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4JW-34-eZL">
+                                            <rect key="frame" x="0.0" y="0.0" width="326" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="326" height="250"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="nfb-mB-X7v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nfb-mB-X7v" firstAttribute="trailing" secondItem="WTa-2L-gq9" secondAttribute="trailing" constant="4" id="Kyh-bv-y51"/>
+                            <constraint firstItem="Vzf-0q-Qf4" firstAttribute="centerX" secondItem="72b-XY-yec" secondAttribute="centerX" id="Nus-fq-yTt"/>
+                            <constraint firstItem="WTa-2L-gq9" firstAttribute="bottom" secondItem="nfb-mB-X7v" secondAttribute="bottom" id="OiI-ok-vaG"/>
+                            <constraint firstItem="WTa-2L-gq9" firstAttribute="top" secondItem="nfb-mB-X7v" secondAttribute="top" id="bhq-gE-BdC"/>
+                            <constraint firstItem="Vzf-0q-Qf4" firstAttribute="centerY" secondItem="72b-XY-yec" secondAttribute="centerY" id="iJG-df-Efm"/>
+                            <constraint firstItem="WTa-2L-gq9" firstAttribute="leading" secondItem="nfb-mB-X7v" secondAttribute="leading" constant="4" id="jZl-AR-eiE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="347-SR-GyI">
                         <barButtonItem key="leftBarButtonItem" title="Filter" image="slider.horizontal.3" catalog="system" id="EgV-Mx-4ee">
@@ -58,6 +98,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="WTa-2L-gq9" id="Uyt-yO-0Hm"/>
+                        <outlet property="indicator" destination="Vzf-0q-Qf4" id="51c-Yj-Fhc"/>
                         <outlet property="searchBar" destination="3wn-Jh-lWX" id="hoB-7L-w5b"/>
                         <outlet property="searchBarButton" destination="x8j-MZ-frb" id="dw6-Nd-Vie"/>
                     </connections>
@@ -72,7 +114,7 @@
                     </connections>
                 </searchBar>
             </objects>
-            <point key="canvasLocation" x="-912" y="985"/>
+            <point key="canvasLocation" x="-912.30769230769226" y="984.59715639810418"/>
         </scene>
         <!--Notes View Controller-->
         <scene sceneID="elh-ab-UHQ">
