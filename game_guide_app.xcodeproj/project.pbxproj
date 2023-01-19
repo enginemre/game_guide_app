@@ -24,6 +24,13 @@
 		69BF933629780109008A14A1 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF933529780109008A14A1 /* GameViewModel.swift */; };
 		69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BF933C297821AB008A14A1 /* GameFeedCell.swift */; };
 		69BF933F297821AB008A14A1 /* GameFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69BF933D297821AB008A14A1 /* GameFeedCell.xib */; };
+		69DC8C2529784DE300E439EA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 69DC8C2429784DE300E439EA /* Kingfisher */; };
+		69DC8C2829784E1500E439EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 69DC8C2729784E1500E439EA /* Alamofire */; };
+		69DC8C2A2978507600E439EA /* GameFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C292978507600E439EA /* GameFeedManager.swift */; };
+		69DC8C2C29785A8D00E439EA /* GameFeedDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C2B29785A8D00E439EA /* GameFeedDto.swift */; };
+		69DC8C2E29786F1900E439EA /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C2D29786F1900E439EA /* GameModel.swift */; };
+		69DC8C302978720700E439EA /* GameCollectionViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C2F2978720700E439EA /* GameCollectionViewHelper.swift */; };
+		69DC8C322978881E00E439EA /* GameFeedFooterLoadingReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C312978881E00E439EA /* GameFeedFooterLoadingReusableView.swift */; };
 		69F5A820297845E500361D31 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F5A81F297845E500361D31 /* NetworkHelper.swift */; };
 		69F5A822297845F500361D31 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F5A821297845F500361D31 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +55,11 @@
 		69BF933529780109008A14A1 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 		69BF933C297821AB008A14A1 /* GameFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedCell.swift; sourceTree = "<group>"; };
 		69BF933D297821AB008A14A1 /* GameFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameFeedCell.xib; sourceTree = "<group>"; };
+		69DC8C292978507600E439EA /* GameFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedManager.swift; sourceTree = "<group>"; };
+		69DC8C2B29785A8D00E439EA /* GameFeedDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedDto.swift; sourceTree = "<group>"; };
+		69DC8C2D29786F1900E439EA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		69DC8C2F2978720700E439EA /* GameCollectionViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewHelper.swift; sourceTree = "<group>"; };
+		69DC8C312978881E00E439EA /* GameFeedFooterLoadingReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedFooterLoadingReusableView.swift; sourceTree = "<group>"; };
 		69F5A81F297845E500361D31 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		69F5A821297845F500361D31 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -57,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69DC8C2529784DE300E439EA /* Kingfisher in Frameworks */,
+				69DC8C2829784E1500E439EA /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +223,9 @@
 		693BAEE9297179940011D412 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				69DC8C292978507600E439EA /* GameFeedManager.swift */,
+				69DC8C2B29785A8D00E439EA /* GameFeedDto.swift */,
+				69DC8C2D29786F1900E439EA /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -261,6 +278,8 @@
 			children = (
 				69BF933C297821AB008A14A1 /* GameFeedCell.swift */,
 				69BF933D297821AB008A14A1 /* GameFeedCell.xib */,
+				69DC8C2F2978720700E439EA /* GameCollectionViewHelper.swift */,
+				69DC8C312978881E00E439EA /* GameFeedFooterLoadingReusableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -290,6 +309,10 @@
 			dependencies = (
 			);
 			name = game_guide_app;
+			packageProductDependencies = (
+				69DC8C2429784DE300E439EA /* Kingfisher */,
+				69DC8C2729784E1500E439EA /* Alamofire */,
+			);
 			productName = game_guide_app;
 			productReference = 693BAEBE297146140011D412 /* game_guide_app.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +341,10 @@
 				Base,
 			);
 			mainGroup = 693BAEB5297146140011D412;
+			packageReferences = (
+				69DC8C2329784DE300E439EA /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				69DC8C2629784E1500E439EA /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 693BAEBF297146140011D412 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -350,16 +377,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				69F5A820297845E500361D31 /* NetworkHelper.swift in Sources */,
+				69DC8C2A2978507600E439EA /* GameFeedManager.swift in Sources */,
 				693BAEF829717F270011D412 /* FavouritesViewController.swift in Sources */,
+				69DC8C2C29785A8D00E439EA /* GameFeedDto.swift in Sources */,
 				693BAEF629717EE10011D412 /* GameViewController.swift in Sources */,
+				69DC8C2E29786F1900E439EA /* GameModel.swift in Sources */,
 				693BAEC6297146140011D412 /* TabBarController.swift in Sources */,
 				693BAEFA297180180011D412 /* NotesViewController.swift in Sources */,
 				693BAEC2297146140011D412 /* AppDelegate.swift in Sources */,
 				69087164297729F600339488 /* BaseViewController.swift in Sources */,
+				69DC8C302978720700E439EA /* GameCollectionViewHelper.swift in Sources */,
 				693BAECC297146140011D412 /* game_guide_app.xcdatamodeld in Sources */,
 				69BF933629780109008A14A1 /* GameViewModel.swift in Sources */,
 				69F5A822297845F500361D31 /* NetworkManager.swift in Sources */,
 				693BAEC4297146140011D412 /* SceneDelegate.swift in Sources */,
+				69DC8C322978881E00E439EA /* GameFeedFooterLoadingReusableView.swift in Sources */,
 				69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +612,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		69DC8C2329784DE300E439EA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		69DC8C2629784E1500E439EA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		69DC8C2429784DE300E439EA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69DC8C2329784DE300E439EA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		69DC8C2729784E1500E439EA /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69DC8C2629784E1500E439EA /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		693BAECA297146140011D412 /* game_guide_app.xcdatamodeld */ = {

@@ -8,9 +8,69 @@
 import Foundation
 
 class GameViewModel  {
+
+    private let model = GameModel()
+    
+    
+    // Data binding
+    
+    var onErrorOccurred : ((String) -> ())?
+    
+    var onDataRecived : (([GameCellItem]?)-> ())?
+    
+    var onNextDataRecived : (([GameCellItem]?) -> ())?
+    
+    func didViewLoad(){
+        fetchData()
+    }
+    
+    init(){
+        model.delegate = self
+    }
     func fetchData(){
+        model.fetchData()
+    }
+    
+    func fetchNextData(){
+        model.fetchNextData()
+    }
+    
+    func itemPressed(_ index : Int){
         
     }
+    
+    func shouldShowIndic() -> Bool{
+        return model.shouldShowIndic
+    }
+    
+    
+    func searchData(byText text:String){
+        model.searchData(byText: text)
+    }
+    
+    
+}
+
+extension GameViewModel : GameModelProtocol {
+    func didDataFetch() {
+        let gameCellItems :[GameCellItem] = model.data.map { game in
+                .init(image: game.backgroundImage ?? "", title: game.name ?? "")
+        }
+        onDataRecived?(gameCellItems)
+    }
+    
+    func didDataNotFetch() {
+        onErrorOccurred?("Please try again later")
+    }
+    
+    func didNextDataFetch() {
+        let gameCellItems :[GameCellItem] = model.data.map { game in
+                .init(image: game.backgroundImage ?? "", title: game.name ?? "")
+        }
+        onNextDataRecived?(gameCellItems)
+    }
+    
+    
 }
 
 

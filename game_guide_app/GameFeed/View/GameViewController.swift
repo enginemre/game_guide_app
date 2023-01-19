@@ -9,27 +9,23 @@ import UIKit
 
 class GameViewController: BaseViewController {
     
-    private let estimateWith = 160.0
-    private let cellMarginSize = 16.0
+
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var indicator: UIActivityIndicatorView!
     @IBOutlet weak var searchBarButton: UIBarButtonItem!
+    
+    private var collectionHelper : GameCollectionViewHelper!
+    private let viewModel = GameViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-    
+        setupBindings()
+        viewModel.didViewLoad()
     }
     
-    private func setupUI(){
-        navigationItem.title = "Game Guide"
-        // Customizing searchBar
-        setupSearchBar()
-        setupCollectionView()
-        setupSpinner()
-    }
+  
     
     private func setupSpinner(){
         indicator.startAnimating()
@@ -40,17 +36,6 @@ class GameViewController: BaseViewController {
                 self.collectionView.alpha = 1
             })
         })
-    }
-    
-    private func setupCollectionView(){
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.isHidden = true
-        collectionView.alpha = 0
-        collectionView.register(UINib(nibName: "GameFeedCell", bundle: nil), forCellWithReuseIdentifier: "GameFeedCell")
-        let flow = collectionView.collectionViewLayout  as! UICollectionViewFlowLayout
-        flow.minimumLineSpacing = CGFloat(self.cellMarginSize)
-        flow.minimumInteritemSpacing = CGFloat(self.cellMarginSize)
     }
     
     // MARK: SEARCHBAR
@@ -121,40 +106,33 @@ extension GameViewController : UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search(shouldShow : false)
-
+        viewModel.fetchData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.searchData(byText:searchBar.text ?? "")
     }
 }
 
-extension GameViewController : UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+private extension GameViewController {
+        
+    private func setupUI(){
+        navigationItem.title = "Game Guide"
+        collectionHelper = .init(collectionView: collectionView, viewModel: viewModel, view: self.view)
+        // Customizing searchBar
+        setupSearchBar()
+        setupSpinner()
     }
     
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameFeedCell", for: indexPath) as! GameFeedCell
-        return cell
+    func setupBindings(){
+        viewModel.onErrorOccurred = { [weak self] message in
+            self?.collectionHelper.isLoadingMoreGames = false
+            let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+            alertController.addAction(.init(title: "Ok", style: .default))
+            self?.present(alertController,animated: true)
+        }
+        viewModel.onDataRecived =  { [weak self] data in
+            self?.collectionHelper.setItems(data!)
+        }
     }
-    
-    
-}
-
-extension GameViewController : UICollectionViewDelegate{
-    
-}
-
-extension GameViewController : UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.calculateWith()
-        return CGSize(width: width, height: width * 1.5 )
-    }
-    
-    func calculateWith() -> CGFloat {
-        let estimateWidth = CGFloat(estimateWith)
-        let cellCount = floor(CGFloat(self.view.frame.size.width) / estimateWidth)
-        let margin = CGFloat(cellMarginSize * 2)
-        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
-        return width
-    }
-    
 }
