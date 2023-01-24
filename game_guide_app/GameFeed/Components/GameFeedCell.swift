@@ -30,5 +30,6 @@ class GameFeedCell: UICollectionViewCell {
 struct GameCellItem {
     let image : String
     let title : String
+    var id : Int
 }
 

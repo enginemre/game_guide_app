@@ -34,4 +34,16 @@ class GameFeedManager {
             }
         })
     }
+    
+    
+    func getGame(by id : Int,parameters:Parameters, complete : @escaping ((GameDetail?,String?) -> ())){
+        NetworkManager.shared.request(type: GameDetail.self, url: "\(NetworkHelper.shared.baseUrl)\(Paths.games)/\(id)", parameters: parameters, method: HTTPMethod.get,  completion: { (response) in
+            switch response {
+            case .success(let data) :
+                complete(data,nil)
+            case.failure(let error):
+                complete(nil,error.rawValue)
+            }
+        })
+    }
 }

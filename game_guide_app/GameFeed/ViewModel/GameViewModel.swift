@@ -54,18 +54,19 @@ class GameViewModel  {
 extension GameViewModel : GameModelProtocol {
     func didDataFetch() {
         let gameCellItems :[GameCellItem] = model.data.map { game in
-                .init(image: game.backgroundImage ?? "", title: game.name ?? "")
+                .init(image: game.backgroundImage ?? "", title: game.name ?? "",id : game.id!)
         }
         onDataRecived?(gameCellItems)
     }
     
     func didDataNotFetch() {
+        // TODO: Localization
         onErrorOccurred?("Please try again later")
     }
     
     func didNextDataFetch() {
         let gameCellItems :[GameCellItem] = model.data.map { game in
-                .init(image: game.backgroundImage ?? "", title: game.name ?? "")
+                .init(image: game.backgroundImage ?? "", title: game.name ?? "",id: game.id!)
         }
         onNextDataRecived?(gameCellItems)
     }

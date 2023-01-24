@@ -15,6 +15,8 @@ enum ErrorTypes : String, Error  {
     case generalError = "An error happened"
 }
 
+
+
 enum Paths : String{
     case games = "games"
 }

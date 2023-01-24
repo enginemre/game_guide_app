@@ -25,6 +25,9 @@ class GameViewController: BaseViewController {
         viewModel.didViewLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.title = "Game Guide"
+    }
   
     
     private func setupSpinner(){
@@ -112,6 +115,8 @@ extension GameViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchData(byText:searchBar.text ?? "")
     }
+    
+    
 }
 
 private extension GameViewController {
@@ -119,6 +124,7 @@ private extension GameViewController {
     private func setupUI(){
         navigationItem.title = "Game Guide"
         collectionHelper = .init(collectionView: collectionView, viewModel: viewModel, view: self.view)
+        collectionHelper.delegate = self
         // Customizing searchBar
         setupSearchBar()
         setupSpinner()
@@ -135,4 +141,18 @@ private extension GameViewController {
             self?.collectionHelper.setItems(data!)
         }
     }
+}
+
+extension GameViewController : GameCollectionViewHelperDelegete{
+    func pressedButton(_ cellItem: GameCellItem) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailVC = storyBoard.instantiateViewController(withIdentifier: "GameDetailViewController") as? GameDetailViewController{
+            detailVC.id = cellItem.id
+            self.title = " "
+            self.navigationController!.pushViewController(detailVC, animated: true)
+            
+        }
+    }
+    
+    
 }

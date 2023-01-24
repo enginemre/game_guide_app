@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol GameCollectionViewHelperDelegete : AnyObject{
+    func pressedButton(_ cellItem : GameCellItem)
+}
+
 class GameCollectionViewHelper : NSObject {
     
     typealias RowItem = GameCellItem
@@ -16,7 +20,7 @@ class GameCollectionViewHelper : NSObject {
     
     var isLoadingMoreGames = false
     
-    
+    weak var delegate : GameCollectionViewHelperDelegete?
     weak var view : UIView?
     weak var collectionView : UICollectionView?
     weak var viewModel : GameViewModel?
@@ -40,6 +44,7 @@ class GameCollectionViewHelper : NSObject {
     private func setupCollectionView(){
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        
         collectionView?.isHidden = true
         collectionView?.alpha = 0
         collectionView?.register(UINib(nibName: "GameFeedCell", bundle: nil), forCellWithReuseIdentifier:cellIdentifier)
@@ -83,6 +88,11 @@ extension GameCollectionViewHelper : UICollectionViewDataSource {
 }
 
 extension GameCollectionViewHelper : UICollectionViewDelegate{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        delegate?.pressedButton(item)
+    }
     
 }
 
