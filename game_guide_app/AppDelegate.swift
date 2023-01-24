@@ -42,11 +42,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreDataManager(game: "game_guide_app")
         
         
+        let center = UNUserNotificationCenter.current()
+            center.delegate = self
+            
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound]) {(accepted, error) in
+                if !accepted {
+                    print("Notification access denied")
+                }
+            }
+        
+        
         return true
     }
-
 
    
 
 }
 
+extension AppDelegate : UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+
+        
+        completionHandler( [.alert, .badge, .sound])
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+}
