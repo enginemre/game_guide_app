@@ -1,6 +1,8 @@
 
 import Foundation
 
+
+// MARK: - GameDto
 struct GameDto: Codable {
     let count: Int?
     let next, previous: String?

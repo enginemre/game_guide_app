@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 protocol GameModelProtocol : AnyObject{
     func didDataFetch()
     
@@ -20,14 +21,18 @@ class GameModel {
     
     private(set) var data : [Game]  = []
     
+    // Should I show collection view footer indicator
     var shouldShowIndic :Bool = false
     
+    // Next page url
     var nextUrl: String? 
     
     weak var delegate : GameModelProtocol?
     
     private let gameFeedManager = GameFeedManager()
+
     
+
     func fetchData(){
         var parameters = NetworkHelper.shared.parameters
         parameters["page"] =  "1"
@@ -44,6 +49,7 @@ class GameModel {
         })
     }
 
+    // Fetch data from next url
     func fetchNextData(){
         if let url = nextUrl {
             gameFeedManager.getNextData(url: url) { game, message in
@@ -62,6 +68,7 @@ class GameModel {
         
     }
 
+    
     func searchData(byText text:String){
         var parameters = NetworkHelper.shared.parameters
         parameters["search"] = text

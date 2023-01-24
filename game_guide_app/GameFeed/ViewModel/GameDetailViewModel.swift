@@ -27,6 +27,7 @@ class GameDetailViewModel {
         model.delegate = self
     }
     
+    
     func fetchData(by id : Int){
         if(model.containData(id: id)){
             model.fetchGameFromDB(id: id)
@@ -51,16 +52,14 @@ extension GameDetailViewModel : GameDetailProtocol {
     
     func didDataFetch() {
         guard let data = model.data else {
-            // TODO: Localization
-            onErrorOccurred?("Game detail did not fetch")
+            onErrorOccurred?("Game detail did not fetch".localized())
             return
         }
         onDataRecived?(data)
     }
     
     func didDataNotFetch() {
-        // TODO: Localization
-        onErrorOccurred?("Please try again later")
+        onErrorOccurred?("Please try again later".localized())
     }
     
     

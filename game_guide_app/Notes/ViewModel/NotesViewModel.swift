@@ -13,7 +13,6 @@ class NotesViewModel{
     
     
     // Data Binding
-    
     var onErrorOccurred : ((String) -> ())?
     
     var onDataRecived : (([GameDetail]?)-> ())?
@@ -32,21 +31,16 @@ class NotesViewModel{
         model.fetchData()
     }
     
-    
-    
 }
 
 extension NotesViewModel : NotesModelDelegate {
-    
     
     func didDataFetch() {
         onDataRecived?(model.data)
     }
     
     func didDataNotFetch() {
-        // TODO: Localization
-        onErrorOccurred?("Please try again later")
+        onErrorOccurred?("Please try again later".localized())
     }
-    
     
 }

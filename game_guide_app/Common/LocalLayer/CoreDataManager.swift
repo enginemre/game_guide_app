@@ -127,7 +127,7 @@ final class CoreDataManager {
         fetchRequest.fetchLimit = 1
         
         do {
-            var result =  try managedObjectContext.fetch(fetchRequest)
+            let result =  try managedObjectContext.fetch(fetchRequest)
             result.first?.note = note
             result.first?.isFavourite = favourite
             try managedObjectContext.save()
@@ -144,7 +144,7 @@ final class CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "id == %d",id)
         fetchRequest.fetchLimit = 1
         do {
-            var result =  try managedObjectContext.fetch(fetchRequest)
+            let result =  try managedObjectContext.fetch(fetchRequest)
             return !(result.isEmpty)
         }catch{
             print("Contains doesnt work")
@@ -157,7 +157,7 @@ final class CoreDataManager {
         fetchRequest.predicate = NSPredicate(format: "id == %d",id)
         fetchRequest.fetchLimit = 1
         do {
-            var result =  try managedObjectContext.fetch(fetchRequest)
+            let result =  try managedObjectContext.fetch(fetchRequest)
             completion(.success(result.first))
         }catch{
             print("Get game doesnt work")

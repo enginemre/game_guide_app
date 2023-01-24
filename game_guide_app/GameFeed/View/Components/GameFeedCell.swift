@@ -16,10 +16,11 @@ class GameFeedCell: UICollectionViewCell {
     @IBOutlet weak var gameTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Styling cell view corner
         gameView.layer.cornerRadius = 8
     }
     
-    
+    // Configuring cell
     func cofigureCell(with item : GameCellItem){
         gameTitle.text = item.title
     }

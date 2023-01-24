@@ -32,7 +32,7 @@ class FavouriteModel{
                     return
                 }
                 self.favourites =  game.map { game in
-                    GameDetail(id: Int(game.id), name: game.name, description: game.descriptions, released: game.released, updated: game.updatedDate, backgroundImage: game.imageUrl, backgroundImageAdditional: game.imageUrl, website: game.website, rating: game.rating, ratingTop: Int(game.ratingTop),isFavourite: game.isFavourite,note : game.note ?? "")
+                    game.toGameDetail()
                 }
                 self.delegate?.didDataFetch()
             case.failure(_):

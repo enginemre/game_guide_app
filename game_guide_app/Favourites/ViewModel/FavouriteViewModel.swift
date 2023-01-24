@@ -38,8 +38,7 @@ extension FavouriteViewModel : FavouriteModelDelegate{
     }
     
     func didDataNotFetch() {
-        // TODO: Localization
-        onErrorOccurred?("Please try again later")
+        onErrorOccurred?("Please try again later".localized())
     }
     
     

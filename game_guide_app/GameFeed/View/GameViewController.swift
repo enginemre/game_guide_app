@@ -22,6 +22,7 @@ class GameViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         setupBindings()
+        setupSpinner()
         viewModel.didViewLoad()
     }
     
@@ -32,16 +33,16 @@ class GameViewController: BaseViewController {
     
     private func setupSpinner(){
         indicator.startAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
-            self.indicator.stopAnimating()
-            self.collectionView.isHidden = false
-            UIView.animate(withDuration: 0.4, animations: {
-                self.collectionView.alpha = 1
-            })
+    }
+    
+    private func showContent(){
+        self.indicator.stopAnimating()
+        self.collectionView.isHidden = false
+        UIView.animate(withDuration: 0.4, animations: {
+            self.collectionView.alpha = 1
         })
     }
     
-    // MARK: SEARCHBAR
     private func setupSearchBar(){
         searchBar.delegate = self
         searchBar.tintColor = UIColor.white
@@ -51,8 +52,7 @@ class GameViewController: BaseViewController {
         searchBar.searchTextField.leftView?.tintColor = .white
         searchBar.searchTextField.textColor = .white
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
-            // TODO: Localizaiton
-            string: "Arama",
+            string: "Search".localized(),
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font : UIFont(name: "Sk-Modernist-Regular", size: 16)!]
         )
         searchBar.searchTextField.attributedText =  NSAttributedString(
@@ -62,20 +62,22 @@ class GameViewController: BaseViewController {
     }
     
     @IBAction func searchTapped(_ sender: Any) {
+        // Expanding searchbar and focus field
         search(shouldShow: true)
         searchBar.becomeFirstResponder()
           
     }
     
-    
-    
     @objc  private func showSearchBar(){
         search(shouldShow: true)
         searchBar.becomeFirstResponder()
     }
+    
+    // Showing filter screen
     @objc private func showFilterScreen(){
         
     }
+    
     // Show search bar and hide other items
     private func showSearchBarButton( shouldShow : Bool){
         if shouldShow{
@@ -132,6 +134,7 @@ private extension GameViewController {
     
     func setupBindings(){
         viewModel.onErrorOccurred = { [weak self] message in
+            self?.showContent()
             self?.collectionHelper.isLoadingMoreGames = false
             let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
             alertController.addAction(.init(title: "Ok", style: .default))
@@ -139,6 +142,7 @@ private extension GameViewController {
         }
         viewModel.onDataRecived =  { [weak self] data in
             self?.collectionHelper.setItems(data!)
+            self?.showContent()
         }
     }
 }

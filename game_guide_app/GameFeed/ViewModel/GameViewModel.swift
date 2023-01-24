@@ -13,7 +13,6 @@ class GameViewModel  {
     
     
     // Data binding
-    
     var onErrorOccurred : ((String) -> ())?
     
     var onDataRecived : (([GameCellItem]?)-> ())?
@@ -27,16 +26,13 @@ class GameViewModel  {
     init(){
         model.delegate = self
     }
+    
     func fetchData(){
         model.fetchData()
     }
     
     func fetchNextData(){
         model.fetchNextData()
-    }
-    
-    func itemPressed(_ index : Int){
-        
     }
     
     func shouldShowIndic() -> Bool{
@@ -61,7 +57,7 @@ extension GameViewModel : GameModelProtocol {
     
     func didDataNotFetch() {
         // TODO: Localization
-        onErrorOccurred?("Please try again later")
+        onErrorOccurred?("Please try again later".localized())
     }
     
     func didNextDataFetch() {

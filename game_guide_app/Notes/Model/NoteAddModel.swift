@@ -39,7 +39,7 @@ class NoteAddModel {
                     self.delegate?.didDataNotFetch()
                     return
                 }
-                self.data = GameDetail(id: Int(game.id), name: game.name, description: game.descriptions, released: game.released, updated: game.updatedDate, backgroundImage: game.imageUrl, backgroundImageAdditional: game.imageUrl, website: game.website, rating: game.rating, ratingTop: Int(game.ratingTop),isFavourite: game.isFavourite,note : game.note ?? "")
+                self.data = game.toGameDetail()
                 self.delegate?.didDataFetch()
             }
             
@@ -48,8 +48,7 @@ class NoteAddModel {
     
     
     func fetchGameFromAPI(by id : Int){
-        
-        var parameters = NetworkHelper.shared.parameters
+        let parameters = NetworkHelper.shared.parameters
         gameFeedManager.getGame(by: id, parameters: parameters) { data, message in
             guard let game = data else {
                 self.delegate?.didDataNotFetch()
@@ -61,42 +60,44 @@ class NoteAddModel {
         
     }
     
+    // Checking core data is contains game
     func containData(id : Int) -> Bool{
         return coreDataManager.containData(id: id)
     }
     
     
     func fetchGame(by id : Int){
-        
-        
-        coreDataManager.getGameBy(id: id) { res in
-            switch(res){
-            case .success(let data):
-                guard let games = data else {
-                    self.delegate?.didDataNotFetch()
-                    return
-                }
-                self.data =
-                GameDetail(id: Int(games.id), name: games.name ?? "", description: games.descriptions ?? "", released: games.released ?? "", updated: games.updatedDate ?? "", backgroundImage: games.imageUrl ?? "", backgroundImageAdditional: games.imageUrlAlt ?? "",  website: games.website ?? "", rating: games.rating , ratingTop: Int(games.ratingTop ))
-                
-                self.delegate?.didDataFetch()
-            case .failure(_):
-                self.delegate?.didDataNotFetch()
-            }
+        if(containData(id: id)){
+            fetchGameFromDB(id: id)
+        }else{
+            fetchGameFromAPI(by: id)
         }
     }
     
     func updateNote(note : String){
         if let game = data {
-            coreDataManager.updateGame(id: game.id!, note: game.note, favourite: game.isFavourite) { res in
-                switch(res){
-                case .success(_):
-                    self.data?.note = note
-                    self.delegate?.didDataUpdate()
-                case .failure(_):
-                    self.delegate?.didDataNotUpdate()
+            if(coreDataManager.containData(id: game.id!)){
+                coreDataManager.updateGame(id: game.id!, note: note, favourite: game.isFavourite) { res in
+                    switch(res){
+                    case .success(_):
+                        self.data?.note = note
+                        self.delegate?.didDataUpdate()
+                    case .failure(_):
+                        self.delegate?.didDataNotUpdate()
+                    }
                 }
+            }else{
+                coreDataManager.saveGame(game, note, completion:  { res in
+                    switch(res){
+                    case .success(_):
+                        self.data?.note = note
+                        self.delegate?.didDataUpdate()
+                    case .failure(_):
+                        self.delegate?.didDataNotUpdate()
+                    }
+                }, isFavourite : game.isFavourite)
             }
+            
         }
     }
     

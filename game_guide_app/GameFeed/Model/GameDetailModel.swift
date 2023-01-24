@@ -27,9 +27,9 @@ class GameDetailModel {
     private let gameFeedManager = GameFeedManager()
     private let coreDataManager = CoreDataManager(game:"game_guide_app")
     
+    
     func fetchGameFromAPI(by id : Int){
-        
-        var parameters = NetworkHelper.shared.parameters
+        let parameters = NetworkHelper.shared.parameters
         gameFeedManager.getGame(by: id, parameters: parameters) { data, message in
             guard let game = data else {
                 self.delegate?.didDataNotFetch()
@@ -40,7 +40,7 @@ class GameDetailModel {
         }
         
     }
-    
+    // Checking core data is contains game
     func containData(id : Int) -> Bool{
         return coreDataManager.containData(id: id)
     }
@@ -57,7 +57,8 @@ class GameDetailModel {
                     self.delegate?.didDataNotFetch()
                     return
                 }
-                self.data = GameDetail(id: Int(game.id), name: game.name, description: game.descriptions, released: game.released, updated: game.updatedDate, backgroundImage: game.imageUrl, backgroundImageAdditional: game.imageUrl, website: game.website, rating: game.rating, ratingTop: Int(game.ratingTop),isFavourite: game.isFavourite,note : game.note ?? "")
+                // Converting GameEntity to GameDetail
+                self.data = game.toGameDetail() 
                 self.delegate?.didDataFetch()
             }
             
@@ -66,21 +67,22 @@ class GameDetailModel {
     
     func setFavourite(){
         let favourite = data?.isFavourite ?? false
-        // if doesn't contain data add else update
-        if(coreDataManager.containData(id: data!.id!)){
-            coreDataManager.updateGame(id: data!.id!, note: data?.note ?? "", favourite: favourite) { res in
-                
-                switch(res){
-                    case .success(_):
-                        self.delegate?.didDataFavourite(!favourite)
-                    case .failure(_):
-                        print("Error ocurred while favouriting item")
-                        self.delegate?.didDataFavourite(favourite)
+        if let data = data {
+            // if doesn't contain data add to db otherwise update
+            if(coreDataManager.containData(id: data.id!)){
+                coreDataManager.updateGame(id: data.id!, note: data.note, favourite: !favourite) { res in
+                    switch(res){
+                        case .success(_):
+                            self.data?.isFavourite = !favourite
+                            self.delegate?.didDataFavourite(!favourite)
+                        case .failure(_):
+                            print("Error ocurred while favouriting item")
+                            self.data?.isFavourite = favourite
+                            self.delegate?.didDataFavourite(favourite)
+                    }
                 }
-            }
-        }else{
-            if let game = data {
-                coreDataManager.saveGame(game, "", completion: { res in
+            }else{
+                coreDataManager.saveGame(data, "", completion: { res in
                     switch(res){
                     case .success(_):
                         self.data?.isFavourite = !favourite
@@ -91,11 +93,9 @@ class GameDetailModel {
                     }
                     
                 },isFavourite: !favourite)
+                
             }
         }
-        
-       
-        
     }
     
     private func saveGameToDB(){
