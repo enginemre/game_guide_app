@@ -22,7 +22,6 @@ class GameViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         setupBindings()
-        setupSpinner()
         viewModel.didViewLoad()
     }
     
@@ -33,7 +32,9 @@ class GameViewController: BaseViewController {
     
     private func setupSpinner(){
         indicator.startAnimating()
+        self.collectionView.isHidden = true
     }
+            
     
     private func showContent(){
         self.indicator.stopAnimating()
@@ -75,7 +76,21 @@ class GameViewController: BaseViewController {
     
     // Showing filter screen
     @objc private func showFilterScreen(){
-        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        if let filterVC = storyBoard.instantiateViewController(withIdentifier: "GameFilterViewController") as? GameFilterViewController{
+            filterVC.selectionCallBack = { [weak self] id in
+                self?.setupSpinner()
+                switch(id){
+                case 1:
+                    self?.viewModel.fetchDataByOrderingReleased()
+                case 2:
+                    self?.viewModel.fetchDataByOrderingRating()
+                default:
+                    self?.viewModel.fetchData()
+                }
+            }
+            self.presentPanModal(filterVC)
+        }
     }
     
     // Show search bar and hide other items
@@ -83,8 +98,9 @@ class GameViewController: BaseViewController {
         if shouldShow{
             let searchItem =  UIBarButtonItem(barButtonSystemItem: .search,target : self, action: #selector(showSearchBar))
             searchItem.tintColor = UIColor.white
-            let filterItem =  UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: nil, action: #selector(showFilterScreen))
+            let filterItem =  UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: #selector(showFilterScreen))
             filterItem.tintColor = UIColor.white
+            filterItem.action = #selector(showFilterScreen)
             navigationItem.leftBarButtonItem = filterItem
             navigationItem.rightBarButtonItem = searchItem
         }else {
@@ -128,6 +144,10 @@ private extension GameViewController {
         collectionHelper = .init(collectionView: collectionView, viewModel: viewModel, view: self.view)
         collectionHelper.delegate = self
         // Customizing searchBar
+        let filterItem =  UIBarButtonItem(image: UIImage(systemName: "slider.horizontal.3"), style: .plain, target: self, action: #selector(showFilterScreen))
+        filterItem.tintColor = UIColor.white
+        filterItem.action = #selector(showFilterScreen)
+        navigationItem.leftBarButtonItem = filterItem
         setupSearchBar()
         setupSpinner()
     }

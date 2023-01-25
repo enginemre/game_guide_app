@@ -23,7 +23,8 @@ struct GameDetail: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, name
-        case description, released, updated
+        case  released, updated
+        case description = "description_raw"
         case backgroundImage = "background_image"
         case backgroundImageAdditional = "background_image_additional"
         case website, rating

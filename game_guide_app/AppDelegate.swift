@@ -38,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor(named: "MainColor")
         UITabBar.appearance().unselectedItemTintColor = UIColor.white
-  
-        CoreDataManager(game: "game_guide_app")
+        let appearance = UITabBarAppearance()
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!]
         
         
         let center = UNUserNotificationCenter.current()

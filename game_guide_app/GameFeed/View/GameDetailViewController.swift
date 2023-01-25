@@ -50,6 +50,9 @@ class GameDetailViewController: UIViewController {
         saveNoteBarItem.action = #selector(self.saveGame)
         createNoteBarItem.action = #selector(self.createNote)
         navigationItem.rightBarButtonItems = [createNoteBarItem,saveNoteBarItem]
+        let appearance = UITabBarItem.appearance(whenContainedInInstancesOf: [TabBarController.self])
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!], for: .normal)
+        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "MainColor")!], for: .selected)
     }
     
     private func setupSpinner(){
@@ -122,7 +125,9 @@ private extension GameDetailViewController {
         ratingLabel.text = String( format: "%.1f", game.rating ?? 0.0)
         releasedLabel.text = game.released ?? "not known"
         updatedLabel.text = game.updated ?? "-"
-        descriptionLabel.text = game.description
+        descriptionLabel.attributedText = game.description?.htmlToAttributedString
+        descriptionLabel.textColor = UIColor.white
+        descriptionLabel.font = UIFont(name: "Sk-Modernist-Bold", size: 14)
         changeSaveItem(filled: game.isFavourite)
         if let image = game.backgroundImage {
             gameImage.kf.setImage(with: URL.init(string: image))
