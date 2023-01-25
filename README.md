@@ -28,5 +28,4 @@ You can share your games statics with this app...
   <img src="screenshoots/4.png" width="200" />
   <img src="screenshoots/5.png" width="200" /> 
   <img src="screenshoots/6.png" width="200" />
-  <img src="screenshoots/7.png" width="200" />
 </p>
