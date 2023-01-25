@@ -1,0 +1,60 @@
+
+/* Class = "UITabBarItem"; title = "Notes"; ObjectID = "2Ai-Xg-JUm"; */
+"2Ai-Xg-JUm.title" = "Notlar";
+
+/* Class = "UILabel"; text = "Your Note"; ObjectID = "66N-di-OYB"; */
+"66N-di-OYB.text" = "Not";
+
+/* Class = "UILabel"; text = "Released :"; ObjectID = "8Vw-NV-prL"; */
+"8Vw-NV-prL.text" = "Yayınlanma :";
+
+/* Class = "UIButton"; configuration.title = "Add  Note"; ObjectID = "CND-mH-bpk"; */
+"CND-mH-bpk.configuration.title" = "Add  Note";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CND-mH-bpk"; */
+"CND-mH-bpk.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Dp6-GZ-zNq"; */
+"Dp6-GZ-zNq.text" = "Label";
+
+/* Class = "UILabel"; text = "Rating : "; ObjectID = "Dzi-nP-AXn"; */
+"Dzi-nP-AXn.text" = "Puan : ";
+
+/* Class = "UIBarButtonItem"; title = "Filter"; ObjectID = "EgV-Mx-4ee"; */
+"EgV-Mx-4ee.title" = "Filitrele";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "EyP-ie-dJF"; */
+"EyP-ie-dJF.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Hnw-vH-PvV"; */
+"Hnw-vH-PvV.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Lhz-8G-E6F"; */
+"Lhz-8G-E6F.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "PaK-JP-Kgz"; */
+"PaK-JP-Kgz.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Games"; ObjectID = "QjP-l7-0lU"; */
+"QjP-l7-0lU.title" = "Oyunlar";
+
+/* Class = "UILabel"; text = ""; ObjectID = "SGe-ZY-KyI"; */
+"SGe-ZY-KyI.text" = "";
+
+/* Class = "UITabBarItem"; title = "Favourites"; ObjectID = "Yle-Oc-Gxs"; */
+"Yle-Oc-Gxs.title" = "Favoriler";
+
+/* Class = "UITextField"; placeholder = "Please enter some note"; ObjectID = "ZnJ-Wx-EXL"; */
+"ZnJ-Wx-EXL.placeholder" = "Lütfen bir not ekleyin";
+
+/* Class = "UILabel"; text = "Updated :"; ObjectID = "cYb-Oz-DZl"; */
+"cYb-Oz-DZl.text" = "Son Güncelleme :";
+
+/* Class = "UILabel"; text = "Name :"; ObjectID = "gq1-79-Lfb"; */
+"gq1-79-Lfb.text" = "İsim :";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "nvC-Wb-zbY"; */
+"nvC-Wb-zbY.text" = "Açıklama";
+
+/* Class = "UIBarButtonItem"; title = "Search"; ObjectID = "x8j-MZ-frb"; */
+"x8j-MZ-frb.title" = "Arama";
