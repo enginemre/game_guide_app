@@ -145,6 +145,10 @@
 		690070E2298066B40035B5A8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				693BAEC5297146140011D412 /* TabBarController.swift */,
+				693BAEDD29715EA20011D412 /* Notes */,
+				693BAEDB29715D800011D412 /* Favourites */,
+				693BAEDA29715D6C0011D412 /* GameFeed */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -152,6 +156,9 @@
 		690070E3298066BD0035B5A8 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				69DDA2D6297E4DD500ED7F00 /* CoreDataManager.swift */,
+				69F5A821297845F500361D31 /* NetworkManager.swift */,
+				6976679629803930003D6C7C /* LocalNotificationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -159,16 +166,21 @@
 		690070E4298066C60035B5A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				693BAECA297146140011D412 /* game_guide_app.xcdatamodeld */,
+				693BAECD297146150011D412 /* Assets.xcassets */,
 				690070EC29806B9F0035B5A8 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		690070EE29806C790035B5A8 /* Utils */ = {
+		690070EE29806C790035B5A8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				690070DF298062650035B5A8 /* Extensions.swift */,
+				69087163297729F600339488 /* BaseViewController.swift */,
+				69F5A81F297845E500361D31 /* NetworkHelper.swift */,
 			);
-			path = Utils;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		690073E0297FA8CC00BA5B18 /* Model */ = {
@@ -197,14 +209,6 @@
 				690073EA297FC56200BA5B18 /* NoteTableViewCell.xib */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		690871602977271E00339488 /* components */ = {
-			isa = PBXGroup;
-			children = (
-				69087163297729F600339488 /* BaseViewController.swift */,
-			);
-			path = components;
 			sourceTree = "<group>";
 		};
 		690E964B2972767A00A664E2 /* fonts */ = {
@@ -236,38 +240,17 @@
 		693BAEC0297146140011D412 /* game_guide_app */ = {
 			isa = PBXGroup;
 			children = (
-				690070EE29806C790035B5A8 /* Utils */,
+				690070EE29806C790035B5A8 /* Helpers */,
 				690070E4298066C60035B5A8 /* Resources */,
 				690070E3298066BD0035B5A8 /* Managers */,
 				690070E2298066B40035B5A8 /* Modules */,
 				690E964B2972767A00A664E2 /* fonts */,
-				693BAEDD29715EA20011D412 /* Notes */,
-				693BAEDB29715D800011D412 /* Favourites */,
-				693BAEDA29715D6C0011D412 /* GameFeed */,
-				693BAED929715D570011D412 /* Common */,
 				693BAEC1297146140011D412 /* AppDelegate.swift */,
-				693BAEC5297146140011D412 /* TabBarController.swift */,
 				693BAEC7297146140011D412 /* Main.storyboard */,
-				693BAECD297146150011D412 /* Assets.xcassets */,
 				693BAECF297146150011D412 /* LaunchScreen.storyboard */,
 				693BAED2297146150011D412 /* Info.plist */,
-				693BAECA297146140011D412 /* game_guide_app.xcdatamodeld */,
 			);
 			path = game_guide_app;
-			sourceTree = "<group>";
-		};
-		693BAED929715D570011D412 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				69DDA2D5297E4DA700ED7F00 /* LocalLayer */,
-				69F5A81E297845D000361D31 /* NetworkLayer */,
-				693BAEF429717A170011D412 /* Model */,
-				693BAEF329717A080011D412 /* ViewModel */,
-				693BAEF229717A020011D412 /* View */,
-				693BAEDF2971722E0011D412 /* Components */,
-				690070DF298062650035B5A8 /* Extensions.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		693BAEDA29715D6C0011D412 /* GameFeed */ = {
@@ -283,7 +266,6 @@
 		693BAEDB29715D800011D412 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
-				69C62530297EEEC6004B1A9E /* Components */,
 				693BAEE62971796F0011D412 /* View */,
 				693BAEE5297179690011D412 /* ViewModel */,
 				693BAEE4297179600011D412 /* Model */,
@@ -294,20 +276,11 @@
 		693BAEDD29715EA20011D412 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				690073E6297FC1B900BA5B18 /* Components */,
 				690073E1297FA8D200BA5B18 /* ViewModel */,
 				690073E0297FA8CC00BA5B18 /* Model */,
 				693BAEEE297179C10011D412 /* View */,
 			);
 			path = Notes;
-			sourceTree = "<group>";
-		};
-		693BAEDF2971722E0011D412 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				690871602977271E00339488 /* components */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		693BAEE4297179600011D412 /* Model */ = {
@@ -329,6 +302,7 @@
 		693BAEE62971796F0011D412 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				69C62530297EEEC6004B1A9E /* Components */,
 				693BAEF729717F270011D412 /* FavouritesViewController.swift */,
 			);
 			path = View;
@@ -369,31 +343,11 @@
 		693BAEEE297179C10011D412 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				690073E6297FC1B900BA5B18 /* Components */,
 				693BAEF9297180180011D412 /* NotesViewController.swift */,
 				69D1C1EF297FE5880082E83A /* NoteAddViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		693BAEF229717A020011D412 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		693BAEF329717A080011D412 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		693BAEF429717A170011D412 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		6986A587297DA9BE0041C8DE /* dto */ = {
@@ -413,24 +367,6 @@
 				69C62536297F19BB004B1A9E /* FavouriteTableViewCell.xib */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		69DDA2D5297E4DA700ED7F00 /* LocalLayer */ = {
-			isa = PBXGroup;
-			children = (
-				69DDA2D6297E4DD500ED7F00 /* CoreDataManager.swift */,
-				6976679629803930003D6C7C /* LocalNotificationManager.swift */,
-			);
-			path = LocalLayer;
-			sourceTree = "<group>";
-		};
-		69F5A81E297845D000361D31 /* NetworkLayer */ = {
-			isa = PBXGroup;
-			children = (
-				69F5A81F297845E500361D31 /* NetworkHelper.swift */,
-				69F5A821297845F500361D31 /* NetworkManager.swift */,
-			);
-			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

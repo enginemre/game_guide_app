@@ -9,7 +9,9 @@ import UIKit
 
 class GameViewController: BaseViewController {
     
-
+    
+    private var isSearched = false
+    
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -127,11 +129,16 @@ extension GameViewController : UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         search(shouldShow : false)
-        viewModel.fetchData()
+        if(isSearched){
+            viewModel.fetchData()
+            isSearched = false
+        }
+            
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.searchData(byText:searchBar.text ?? "")
+        isSearched = true
     }
     
     
