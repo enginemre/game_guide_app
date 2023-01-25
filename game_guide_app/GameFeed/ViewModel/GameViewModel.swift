@@ -31,6 +31,14 @@ class GameViewModel  {
         model.fetchData()
     }
     
+    func fetchDataByOrderingRating(){
+        model.fetchDataByOrderingRating()
+    }
+    
+    func fetchDataByOrderingReleased(){
+        model.fetchDataByOrderingReleased()
+    }
+    
     func fetchNextData(){
         model.fetchNextData()
     }

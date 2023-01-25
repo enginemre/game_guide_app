@@ -67,7 +67,37 @@ class GameModel {
         }
         
     }
+    
+    
+    func fetchDataByOrderingReleased() {
+        var parameters = NetworkHelper.shared.parameters
+        parameters["ordering"] = "released"
+        gameFeedManager.getAllGames(parameters: parameters , complete: { data,error in
+            guard let game = data else {
+                self.delegate?.didDataNotFetch()
+                return
+            }
+            self.data = game.results ?? []
+            self.shouldShowIndic = game.next != nil
+            self.nextUrl = game.next
+            self.delegate?.didDataFetch()
+        })
+    }
 
+    func fetchDataByOrderingRating() {
+        var parameters = NetworkHelper.shared.parameters
+        parameters["ordering"] = "rating"
+        gameFeedManager.getAllGames(parameters: parameters , complete: { data,error in
+            guard let game = data else {
+                self.delegate?.didDataNotFetch()
+                return
+            }
+            self.data = game.results ?? []
+            self.shouldShowIndic = game.next != nil
+            self.nextUrl = game.next
+            self.delegate?.didDataFetch()
+        })
+    }
     
     func searchData(byText text:String){
         var parameters = NetworkHelper.shared.parameters

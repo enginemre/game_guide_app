@@ -17,6 +17,15 @@
         "branch" : "master",
         "revision" : "0ce2b6b09be2f46c505e31ca012ad555ef6160a9"
       }
+    },
+    {
+      "identity" : "panmodal",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/slackhq/PanModal",
+      "state" : {
+        "revision" : "b012aecb6b67a8e46369227f893c12544846613f",
+        "version" : "1.2.7"
+      }
     }
   ],
   "version" : 2
