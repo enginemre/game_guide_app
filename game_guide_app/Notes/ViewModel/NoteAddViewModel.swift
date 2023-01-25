@@ -13,7 +13,6 @@ class NoteAddViewModel {
     private let model = NoteAddModel()
     
     // Data Binding
-    
     var onErrorOccurred : ((String) -> ())?
     
     var onDataRecived : ((GameDetail?)-> ())?
@@ -27,6 +26,7 @@ class NoteAddViewModel {
     init(){
         model.delegate = self
     }
+    
     func fetchData(by id : Int){
         if (model.containData(id: id)){
             model.fetchGameFromDB(id: id)
@@ -42,28 +42,26 @@ class NoteAddViewModel {
 }
 
 extension NoteAddViewModel : NoteAddDelegate{
+    
     func didDataUpdate() {
-        // TODO: Local Pushing
-        LocalNotificationManager.setNotification(1, title: "Note Updated", body: "Note was successfully updated")
+        LocalNotificationManager.setNotification(1, title: "Note Updated".localized(), body: "Note was successfully updated".localized())
+        onUpdateCompleted?(model.data)
     }
     
     func didDataNotUpdate() {
-        // TODO: Localization
-        onErrorOccurred?("Note did not updated please try again later")
+        onErrorOccurred?("Note did not updated please try again later".localized())
     }
     
     func didDataFetch() {
         guard let data = model.data else {
-            // TODO: Localization
-            onErrorOccurred?("Game detail did not fetch")
+            onErrorOccurred?("Game detail did not fetch".localized())
             return
         }
         onDataRecived?(data)
     }
     
     func didDataNotFetch() {
-        // TODO: Localization
-        onErrorOccurred?("Please try again later")
+        onErrorOccurred?("Please try again later".localized())
     }
     
     

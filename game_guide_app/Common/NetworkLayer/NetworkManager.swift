@@ -11,7 +11,6 @@ import Alamofire
 class NetworkManager{
     static let shared = NetworkManager()
     
-    let baseURL = ""
     
     func request<T : Codable>(type: T.Type,url:String ,parameters : Parameters?, method : HTTPMethod, completion : @escaping ((Result<T,ErrorTypes>) -> ())){
         AF.request(url, method: method, parameters: parameters).responseDecodable(of: T.self, completionHandler: { (res) in

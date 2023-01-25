@@ -8,11 +8,21 @@
 import Foundation
 import UIKit
 
+
+protocol NotesTableViewHelperDelegete : AnyObject{
+    
+    func pressedButton(_ cellItem : NotesCellItem)
+    
+}
+
+
 class NotesTableViewHelper : NSObject{
     
     typealias RowItem = NotesCellItem
     
     private let cellIdentifier = "NoteTableViewCell"
+    
+    weak var delegate : NotesTableViewHelperDelegete?
     
     weak var tableView : UITableView?
     weak var viewModel : NotesViewModel?
@@ -34,6 +44,7 @@ class NotesTableViewHelper : NSObject{
     
     private func setupTableView(){
         tableView?.dataSource = self
+        tableView?.delegate = self
         let cell = UINib(nibName: "NoteTableViewCell",
                                      bundle: nil)
         tableView?.register(cell,
@@ -55,4 +66,11 @@ extension NotesTableViewHelper : UITableViewDataSource {
     }
     
     
+}
+
+extension NotesTableViewHelper : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        delegate?.pressedButton(item)
+    }
 }

@@ -8,9 +8,11 @@
 import UIKit
 
 final class GameFeedFooterLoadingReusableView: UICollectionReusableView {
+    
     static let identifier = "GameFeedFooterLoadingReusableView"
     
     private let spinner: UIActivityIndicatorView = {
+        // Styling spinner
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.hidesWhenStopped = true
         spinner.translatesAutoresizingMaskIntoConstraints = false
@@ -24,6 +26,7 @@ final class GameFeedFooterLoadingReusableView: UICollectionReusableView {
         addConstraint()
     }
     
+    // Adding constraint for spinner
     private func addConstraint(){
         NSLayoutConstraint.activate([
             spinner.widthAnchor.constraint(equalToConstant: 100),

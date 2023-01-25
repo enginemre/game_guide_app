@@ -11,6 +11,7 @@ class FavouritesViewController: BaseViewController {
 
     private let viewModel =  FavouriteViewModel()
     
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     private var tableViewHelper : FavouritesTableViewHelper!
     
     @IBOutlet weak var tableView: UITableView!
@@ -18,7 +19,7 @@ class FavouritesViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         setupBinding()
-        
+        setupSpinner()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,16 +28,27 @@ class FavouritesViewController: BaseViewController {
     
     
     private func setupUI(){
-        self.title = "Favourites"
+        self.title = "Favourites".localized()
         tableViewHelper = .init(tableView: tableView, viewModel: viewModel)
+    }
+    
+    private func setupSpinner(){
+        tableView.isHidden = true
+        indicator.startAnimating()
+    }
+
+    private func showContent(){
+        tableView.isHidden = false
+        indicator.stopAnimating()
     }
     
     
     private func setupBinding(){
         viewModel.onErrorOccurred = { [weak self] message in
-            let alertController = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-            alertController.addAction(.init(title: "Ok", style: .default))
+            let alertController = UIAlertController(title: "Alert".localized(), message: message, preferredStyle: .alert)
+            alertController.addAction(.init(title: "Ok".localized(), style: .default))
             self?.present(alertController,animated: true)
+            self?.indicator.stopAnimating()
         }
         viewModel.onDataRecived =  { [weak self] data in
             if let data = data{
@@ -45,6 +57,7 @@ class FavouritesViewController: BaseViewController {
                         FavouriteCellItem(image: game.backgroundImage ?? "", title: game.name ?? "", released: game.released ?? "", rating: String(game.rating ?? 0.0), id: game.id!)
                     })
                 )
+                self?.showContent()
             }
             
         }

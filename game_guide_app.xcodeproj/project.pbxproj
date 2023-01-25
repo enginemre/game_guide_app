@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		690070E0298062650035B5A8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690070DF298062650035B5A8 /* Extensions.swift */; };
+		690070EA29806B9F0035B5A8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 690070EC29806B9F0035B5A8 /* Localizable.strings */; };
 		690073E3297FA8E400BA5B18 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E2297FA8E400BA5B18 /* NotesViewModel.swift */; };
 		690073E5297FA8EE00BA5B18 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E4297FA8EE00BA5B18 /* NotesModel.swift */; };
 		690073E8297FC1CE00BA5B18 /* NotesTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E7297FC1CE00BA5B18 /* NotesTableViewHelper.swift */; };
@@ -54,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		690070DF298062650035B5A8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		690070E5298069E50035B5A8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		690070EB29806B9F0035B5A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		690070ED29806BDF0035B5A8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		690073E2297FA8E400BA5B18 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		690073E4297FA8EE00BA5B18 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
 		690073E7297FC1CE00BA5B18 /* NotesTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewHelper.swift; sourceTree = "<group>"; };
@@ -113,6 +119,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690070E1298066600035B5A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				69BF933C297821AB008A14A1 /* GameFeedCell.swift */,
+				69BF933D297821AB008A14A1 /* GameFeedCell.xib */,
+				69DC8C2F2978720700E439EA /* GameCollectionViewHelper.swift */,
+				69DC8C312978881E00E439EA /* GameFeedFooterLoadingReusableView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		690070E2298066B40035B5A8 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		690070E3298066BD0035B5A8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		690070E4298066C60035B5A8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				690070EC29806B9F0035B5A8 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		690070EE29806C790035B5A8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		690073E0297FA8CC00BA5B18 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +224,10 @@
 		693BAEC0297146140011D412 /* game_guide_app */ = {
 			isa = PBXGroup;
 			children = (
+				690070EE29806C790035B5A8 /* Utils */,
+				690070E4298066C60035B5A8 /* Resources */,
+				690070E3298066BD0035B5A8 /* Managers */,
+				690070E2298066B40035B5A8 /* Modules */,
 				690E964B2972767A00A664E2 /* fonts */,
 				693BAEDD29715EA20011D412 /* Notes */,
 				693BAEDB29715D800011D412 /* Favourites */,
@@ -203,6 +253,7 @@
 				693BAEF329717A080011D412 /* ViewModel */,
 				693BAEF229717A020011D412 /* View */,
 				693BAEDF2971722E0011D412 /* Components */,
+				690070DF298062650035B5A8 /* Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -210,7 +261,6 @@
 		693BAEDA29715D6C0011D412 /* GameFeed */ = {
 			isa = PBXGroup;
 			children = (
-				69BF93372978071B008A14A1 /* Components */,
 				693BAEE9297179940011D412 /* Model */,
 				693BAEE82971798F0011D412 /* ViewModel */,
 				693BAEE7297179890011D412 /* View */,
@@ -275,6 +325,7 @@
 		693BAEE7297179890011D412 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				690070E1298066600035B5A8 /* Components */,
 				693BAEF529717EE10011D412 /* GameViewController.swift */,
 				6986A581297DA1630041C8DE /* GameDetailViewController.swift */,
 			);
@@ -338,17 +389,6 @@
 				6986A588297DA9D00041C8DE /* GameDetailDto.swift */,
 			);
 			path = dto;
-			sourceTree = "<group>";
-		};
-		69BF93372978071B008A14A1 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				69BF933C297821AB008A14A1 /* GameFeedCell.swift */,
-				69BF933D297821AB008A14A1 /* GameFeedCell.xib */,
-				69DC8C2F2978720700E439EA /* GameCollectionViewHelper.swift */,
-				69DC8C312978881E00E439EA /* GameFeedFooterLoadingReusableView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		69C62530297EEEC6004B1A9E /* Components */ = {
@@ -425,6 +465,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 693BAEB5297146140011D412;
 			packageReferences = (
@@ -450,6 +491,7 @@
 				69BF933F297821AB008A14A1 /* GameFeedCell.xib in Resources */,
 				69C62538297F19BB004B1A9E /* FavouriteTableViewCell.xib in Resources */,
 				694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */,
+				690070EA29806B9F0035B5A8 /* Localizable.strings in Resources */,
 				6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */,
 				690073EC297FC56200BA5B18 /* NoteTableViewCell.xib in Resources */,
 				6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */,
@@ -495,6 +537,7 @@
 				69C62534297EF0B1004B1A9E /* FavouritesTableViewHelper.swift in Sources */,
 				69D1C1F4297FE5B40082E83A /* NoteAddViewModel.swift in Sources */,
 				69C6252D297ED59B004B1A9E /* FavouriteViewModel.swift in Sources */,
+				690070E0298062650035B5A8 /* Extensions.swift in Sources */,
 				69D1C1F2297FE59E0082E83A /* NoteAddModel.swift in Sources */,
 				69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */,
 			);
@@ -503,10 +546,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		690070EC29806B9F0035B5A8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				690070EB29806B9F0035B5A8 /* en */,
+				690070ED29806BDF0035B5A8 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		693BAEC7297146140011D412 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				693BAEC8297146140011D412 /* Base */,
+				690070E5298069E50035B5A8 /* tr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -526,6 +579,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -586,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

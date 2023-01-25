@@ -25,8 +25,6 @@ class NotesModel {
     private let coreDataManager = CoreDataManager(game: "game_guide_app")
     
     
-    
-    
     func fetchData(){
         coreDataManager.getAllNotes {  res in
             switch(res){
@@ -36,7 +34,7 @@ class NotesModel {
                     return
                 }
                 self.data =  noteList.map { entity in
-                    GameDetail(id: Int(entity.id), name: entity.name, description: entity.descriptions, released: entity.released, updated: entity.updatedDate, backgroundImage: entity.imageUrl, backgroundImageAdditional: entity.imageUrlAlt, website: entity.website, rating: entity.rating, ratingTop: Int(entity.ratingTop))
+                    entity.toGameDetail()
                 }
                 self.delegate?.didDataFetch()
             case .failure(_):
