@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		690073DD297FA4E800BA5B18 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073DC297FA4E800BA5B18 /* NoteViewModel.swift */; };
-		690073DF297FA4F300BA5B18 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073DE297FA4F300BA5B18 /* NoteModel.swift */; };
+		690073E3297FA8E400BA5B18 /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E2297FA8E400BA5B18 /* NotesViewModel.swift */; };
+		690073E5297FA8EE00BA5B18 /* NotesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E4297FA8EE00BA5B18 /* NotesModel.swift */; };
+		690073E8297FC1CE00BA5B18 /* NotesTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E7297FC1CE00BA5B18 /* NotesTableViewHelper.swift */; };
+		690073EB297FC56200BA5B18 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690073E9297FC56200BA5B18 /* NoteTableViewCell.swift */; };
+		690073EC297FC56200BA5B18 /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 690073EA297FC56200BA5B18 /* NoteTableViewCell.xib */; };
 		69087164297729F600339488 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69087163297729F600339488 /* BaseViewController.swift */; };
 		693BAEC2297146140011D412 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC1297146140011D412 /* AppDelegate.swift */; };
 		693BAEC6297146140011D412 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693BAEC5297146140011D412 /* TabBarController.swift */; };
@@ -22,6 +25,7 @@
 		6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */; };
 		6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */; };
 		694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */; };
+		6976679729803930003D6C7C /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6976679629803930003D6C7C /* LocalNotificationManager.swift */; };
 		6986A582297DA1630041C8DE /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986A581297DA1630041C8DE /* GameDetailViewController.swift */; };
 		6986A584297DA1750041C8DE /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986A583297DA1750041C8DE /* GameDetailViewModel.swift */; };
 		6986A586297DA18E0041C8DE /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6986A585297DA18E0041C8DE /* GameDetailModel.swift */; };
@@ -34,6 +38,9 @@
 		69C62534297EF0B1004B1A9E /* FavouritesTableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C62533297EF0B1004B1A9E /* FavouritesTableViewHelper.swift */; };
 		69C62537297F19BB004B1A9E /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C62535297F19BB004B1A9E /* FavouriteTableViewCell.swift */; };
 		69C62538297F19BB004B1A9E /* FavouriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69C62536297F19BB004B1A9E /* FavouriteTableViewCell.xib */; };
+		69D1C1F0297FE5880082E83A /* NoteAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1C1EF297FE5880082E83A /* NoteAddViewController.swift */; };
+		69D1C1F2297FE59E0082E83A /* NoteAddModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1C1F1297FE59E0082E83A /* NoteAddModel.swift */; };
+		69D1C1F4297FE5B40082E83A /* NoteAddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1C1F3297FE5B40082E83A /* NoteAddViewModel.swift */; };
 		69DC8C2529784DE300E439EA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 69DC8C2429784DE300E439EA /* Kingfisher */; };
 		69DC8C2829784E1500E439EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 69DC8C2729784E1500E439EA /* Alamofire */; };
 		69DC8C2A2978507600E439EA /* GameFeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69DC8C292978507600E439EA /* GameFeedManager.swift */; };
@@ -47,8 +54,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		690073DC297FA4E800BA5B18 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
-		690073DE297FA4F300BA5B18 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		690073E2297FA8E400BA5B18 /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
+		690073E4297FA8EE00BA5B18 /* NotesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesModel.swift; sourceTree = "<group>"; };
+		690073E7297FC1CE00BA5B18 /* NotesTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewHelper.swift; sourceTree = "<group>"; };
+		690073E9297FC56200BA5B18 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		690073EA297FC56200BA5B18 /* NoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		69087163297729F600339488 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		693BAEBE297146140011D412 /* game_guide_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = game_guide_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		693BAEC1297146140011D412 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +74,7 @@
 		6945477B2977132A00A95EE2 /* Sk-Modernist-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Regular.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Regular.otf"; sourceTree = "<group>"; };
 		6945477C2977132A00A95EE2 /* Sk-Modernist-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Bold.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Bold.otf"; sourceTree = "<group>"; };
 		6945477D2977132A00A95EE2 /* Sk-Modernist-Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sk-Modernist-Mono.otf"; path = "../../../../../Downloads/Sk-Modernist/Sk-Modernist-Mono.otf"; sourceTree = "<group>"; };
+		6976679629803930003D6C7C /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		6986A581297DA1630041C8DE /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		6986A583297DA1750041C8DE /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		6986A585297DA18E0041C8DE /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
@@ -76,6 +87,9 @@
 		69C62533297EF0B1004B1A9E /* FavouritesTableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesTableViewHelper.swift; sourceTree = "<group>"; };
 		69C62535297F19BB004B1A9E /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		69C62536297F19BB004B1A9E /* FavouriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteTableViewCell.xib; sourceTree = "<group>"; };
+		69D1C1EF297FE5880082E83A /* NoteAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAddViewController.swift; sourceTree = "<group>"; };
+		69D1C1F1297FE59E0082E83A /* NoteAddModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAddModel.swift; sourceTree = "<group>"; };
+		69D1C1F3297FE5B40082E83A /* NoteAddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteAddViewModel.swift; sourceTree = "<group>"; };
 		69DC8C292978507600E439EA /* GameFeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedManager.swift; sourceTree = "<group>"; };
 		69DC8C2B29785A8D00E439EA /* GameFeedDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFeedDto.swift; sourceTree = "<group>"; };
 		69DC8C2D29786F1900E439EA /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
@@ -99,6 +113,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		690073E0297FA8CC00BA5B18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				690073E4297FA8EE00BA5B18 /* NotesModel.swift */,
+				69D1C1F1297FE59E0082E83A /* NoteAddModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		690073E1297FA8D200BA5B18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				690073E2297FA8E400BA5B18 /* NotesViewModel.swift */,
+				69D1C1F3297FE5B40082E83A /* NoteAddViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		690073E6297FC1B900BA5B18 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				690073E7297FC1CE00BA5B18 /* NotesTableViewHelper.swift */,
+				690073E9297FC56200BA5B18 /* NoteTableViewCell.swift */,
+				690073EA297FC56200BA5B18 /* NoteTableViewCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		690871602977271E00339488 /* components */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,9 +232,10 @@
 		693BAEDD29715EA20011D412 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				693BAEEF297179C70011D412 /* ViewModel */,
+				690073E6297FC1B900BA5B18 /* Components */,
+				690073E1297FA8D200BA5B18 /* ViewModel */,
+				690073E0297FA8CC00BA5B18 /* Model */,
 				693BAEEE297179C10011D412 /* View */,
-				693BAEED297179BB0011D412 /* Model */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -258,28 +301,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		693BAEED297179BB0011D412 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				690073DE297FA4F300BA5B18 /* NoteModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		693BAEEE297179C10011D412 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				693BAEF9297180180011D412 /* NotesViewController.swift */,
+				69D1C1EF297FE5880082E83A /* NoteAddViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		693BAEEF297179C70011D412 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				690073DC297FA4E800BA5B18 /* NoteViewModel.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		693BAEF229717A020011D412 /* View */ = {
@@ -337,6 +365,7 @@
 			isa = PBXGroup;
 			children = (
 				69DDA2D6297E4DD500ED7F00 /* CoreDataManager.swift */,
+				6976679629803930003D6C7C /* LocalNotificationManager.swift */,
 			);
 			path = LocalLayer;
 			sourceTree = "<group>";
@@ -422,6 +451,7 @@
 				69C62538297F19BB004B1A9E /* FavouriteTableViewCell.xib in Resources */,
 				694547802977132A00A95EE2 /* Sk-Modernist-Mono.otf in Resources */,
 				6945477E2977132A00A95EE2 /* Sk-Modernist-Regular.otf in Resources */,
+				690073EC297FC56200BA5B18 /* NoteTableViewCell.xib in Resources */,
 				6945477F2977132A00A95EE2 /* Sk-Modernist-Bold.otf in Resources */,
 				693BAEC9297146140011D412 /* Main.storyboard in Resources */,
 			);
@@ -434,24 +464,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6976679729803930003D6C7C /* LocalNotificationManager.swift in Sources */,
 				69F5A820297845E500361D31 /* NetworkHelper.swift in Sources */,
 				69DC8C2A2978507600E439EA /* GameFeedManager.swift in Sources */,
-				690073DD297FA4E800BA5B18 /* NoteViewModel.swift in Sources */,
 				693BAEF829717F270011D412 /* FavouritesViewController.swift in Sources */,
 				69DC8C2C29785A8D00E439EA /* GameFeedDto.swift in Sources */,
+				690073EB297FC56200BA5B18 /* NoteTableViewCell.swift in Sources */,
 				693BAEF629717EE10011D412 /* GameViewController.swift in Sources */,
 				69DC8C2E29786F1900E439EA /* GameModel.swift in Sources */,
 				693BAEC6297146140011D412 /* TabBarController.swift in Sources */,
 				693BAEFA297180180011D412 /* NotesViewController.swift in Sources */,
 				693BAEC2297146140011D412 /* AppDelegate.swift in Sources */,
-				690073DF297FA4F300BA5B18 /* NoteModel.swift in Sources */,
+				690073E8297FC1CE00BA5B18 /* NotesTableViewHelper.swift in Sources */,
 				69C6252F297ED5BC004B1A9E /* FavouriteModel.swift in Sources */,
+				69D1C1F0297FE5880082E83A /* NoteAddViewController.swift in Sources */,
 				69087164297729F600339488 /* BaseViewController.swift in Sources */,
 				69DDA2D7297E4DD500ED7F00 /* CoreDataManager.swift in Sources */,
 				69DC8C302978720700E439EA /* GameCollectionViewHelper.swift in Sources */,
 				693BAECC297146140011D412 /* game_guide_app.xcdatamodeld in Sources */,
 				69BF933629780109008A14A1 /* GameViewModel.swift in Sources */,
 				6986A582297DA1630041C8DE /* GameDetailViewController.swift in Sources */,
+				690073E3297FA8E400BA5B18 /* NotesViewModel.swift in Sources */,
+				690073E5297FA8EE00BA5B18 /* NotesModel.swift in Sources */,
 				6986A586297DA18E0041C8DE /* GameDetailModel.swift in Sources */,
 				69F5A822297845F500361D31 /* NetworkManager.swift in Sources */,
 				69C62537297F19BB004B1A9E /* FavouriteTableViewCell.swift in Sources */,
@@ -459,7 +493,9 @@
 				69DC8C322978881E00E439EA /* GameFeedFooterLoadingReusableView.swift in Sources */,
 				6986A584297DA1750041C8DE /* GameDetailViewModel.swift in Sources */,
 				69C62534297EF0B1004B1A9E /* FavouritesTableViewHelper.swift in Sources */,
+				69D1C1F4297FE5B40082E83A /* NoteAddViewModel.swift in Sources */,
 				69C6252D297ED59B004B1A9E /* FavouriteViewModel.swift in Sources */,
+				69D1C1F2297FE59E0082E83A /* NoteAddModel.swift in Sources */,
 				69BF933E297821AB008A14A1 /* GameFeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

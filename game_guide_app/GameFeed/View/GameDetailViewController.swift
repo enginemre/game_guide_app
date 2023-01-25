@@ -33,9 +33,7 @@ class GameDetailViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
         // TODO: Localization
-        
         self.title = "Detail"
     }
   
@@ -54,9 +52,10 @@ class GameDetailViewController: UIViewController {
     
     @objc private func createNote(){
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        if let gameNotesVC = storyBoard.instantiateViewController(withIdentifier: "NotesViewController") as? NotesViewController{
-            self.title = " "
-            self.navigationController!.pushViewController(gameNotesVC, animated: true)
+        if let gameNotesVC = storyBoard.instantiateViewController(withIdentifier: "NoteAddViewController") as? NoteAddViewController{
+            gameNotesVC.id = id
+            self.present(gameNotesVC, animated: true)
+       
         }
     }
 
@@ -92,7 +91,6 @@ private extension GameDetailViewController {
             if let data = data{
                 self?.setUpContent(data)
             }
-            
         }
         viewModel.onDataFavouriteStatusChange = { [weak self]  status in
             self?.changeSaveItem(filled: status)
@@ -111,7 +109,6 @@ private extension GameDetailViewController {
         }else {
             gameImage.image = UIImage(named : "not-found-image")
         }
-       
     }
     
     

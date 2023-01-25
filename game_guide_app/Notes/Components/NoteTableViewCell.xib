@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sk-Modernist-Mono.otf">
+            <string>Sk-Modernist-Mono</string>
+        </array>
+        <array key="Sk-Modernist-Regular.otf">
+            <string>Sk-Modernist-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="148" id="KGk-i7-Jjw" customClass="NoteTableViewCell" customModule="game_guide_app" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0u6-6s-cRa">
+                        <rect key="frame" x="16" y="16" width="337" height="110"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OYT-lh-BqW">
+                                <rect key="frame" x="8" y="8" width="120" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Xoa-RK-wfi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUM-yx-got">
+                                <rect key="frame" x="144" y="16" width="177" height="21"/>
+                                <fontDescription key="fontDescription" name="Sk-Modernist-Regular" family="Sk-Modernist" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVc-Zd-pUz">
+                                <rect key="frame" x="144" y="53" width="177" height="17"/>
+                                <fontDescription key="fontDescription" name="Sk-Modernist-Mono" family="Sk-Modernist" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="OnSurface"/>
+                        <constraints>
+                            <constraint firstItem="tVc-Zd-pUz" firstAttribute="top" secondItem="BUM-yx-got" secondAttribute="bottom" constant="16" id="55O-xR-nWt"/>
+                            <constraint firstAttribute="height" constant="110" id="Jd7-wR-iVE"/>
+                            <constraint firstItem="BUM-yx-got" firstAttribute="leading" secondItem="OYT-lh-BqW" secondAttribute="trailing" constant="16" id="NGK-uR-HxD"/>
+                            <constraint firstItem="BUM-yx-got" firstAttribute="top" secondItem="0u6-6s-cRa" secondAttribute="top" constant="16" id="V2z-Ff-zVs"/>
+                            <constraint firstAttribute="bottom" secondItem="OYT-lh-BqW" secondAttribute="bottom" constant="8" id="est-qz-zTf"/>
+                            <constraint firstAttribute="trailing" secondItem="tVc-Zd-pUz" secondAttribute="trailing" constant="16" id="ibr-XM-MEj"/>
+                            <constraint firstItem="OYT-lh-BqW" firstAttribute="leading" secondItem="0u6-6s-cRa" secondAttribute="leading" constant="8" id="mdC-Yx-QNr"/>
+                            <constraint firstAttribute="trailing" secondItem="BUM-yx-got" secondAttribute="trailing" constant="16" id="nWZ-xF-LFc"/>
+                            <constraint firstItem="OYT-lh-BqW" firstAttribute="top" secondItem="0u6-6s-cRa" secondAttribute="top" constant="8" id="obY-7y-OZJ"/>
+                            <constraint firstItem="tVc-Zd-pUz" firstAttribute="leading" secondItem="OYT-lh-BqW" secondAttribute="trailing" constant="16" id="wJH-NJ-qdY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" name="AccentColor"/>
+                <constraints>
+                    <constraint firstItem="0u6-6s-cRa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="QvL-U9-JLc"/>
+                    <constraint firstAttribute="trailing" secondItem="0u6-6s-cRa" secondAttribute="trailing" constant="16" id="kNZ-rr-erH"/>
+                    <constraint firstAttribute="bottom" secondItem="0u6-6s-cRa" secondAttribute="bottom" constant="16" id="mNH-dz-EKv"/>
+                    <constraint firstItem="0u6-6s-cRa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="rcN-hQ-9hv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="cellView" destination="0u6-6s-cRa" id="tfb-fM-PSc"/>
+                <outlet property="gameImage" destination="OYT-lh-BqW" id="eBi-Lg-Dnh"/>
+                <outlet property="gameName" destination="tVc-Zd-pUz" id="rPY-rO-qV3"/>
+                <outlet property="gameNote" destination="tVc-Zd-pUz" id="SWl-HN-pMM"/>
+            </connections>
+            <point key="canvasLocation" x="79.230769230769226" y="25.592417061611375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.019999999552965164" green="0.043000001460313797" blue="0.093999996781349182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="OnSurface">
+            <color red="0.12156862745098039" green="0.14117647058823529" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

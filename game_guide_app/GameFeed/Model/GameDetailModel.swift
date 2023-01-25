@@ -98,10 +98,6 @@ class GameDetailModel {
         
     }
     
-    private func containData(_ id : Int) -> Bool {
-       return coreDataManager.containData(id: id)        
-    }
-    
     private func saveGameToDB(){
         if let game = data {
             coreDataManager.saveGame(game, "", completion: { res in
