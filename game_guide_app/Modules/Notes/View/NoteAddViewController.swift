@@ -95,6 +95,8 @@ private extension NoteAddViewController {
         if(!(game.note.isEmpty)){
             gameNote.text = game.note
             noteAddSaveButton.setTitle("Update".localized(), for: .normal)
+        }else {
+            noteAddSaveButton.setTitle("Add Note".localized(), for: .normal)
         }
         if let image = game.backgroundImage {
             gameImage.kf.setImage(with: URL.init(string: image))
