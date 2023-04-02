@@ -56,11 +56,11 @@ class GameViewController: BaseViewController {
         searchBar.searchTextField.textColor = .white
         searchBar.searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Search".localized(),
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font : UIFont(name: "Sk-Modernist-Regular", size: 16)!]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         )
         searchBar.searchTextField.attributedText =  NSAttributedString(
             string: "",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font : UIFont(name: "Sk-Modernist-Regular", size: 16)!]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
         )
     }
     

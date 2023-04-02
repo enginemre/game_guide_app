@@ -28,7 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Customizing UI Navigation bar
         UINavigationBar.appearance().backgroundColor = UIColor(named: "AccentColor")
         let attributes = [
-            NSAttributedString.Key.font: UIFont(name: "Sk-Modernist-Bold", size: 22)!,
             NSAttributedString.Key.foregroundColor: UIColor.white
         ]
         UINavigationBar.appearance().titleTextAttributes = attributes
